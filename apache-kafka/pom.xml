@@ -31,6 +31,20 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 		</dependency>
 
+		<!-- 消费者API允许应用程序从Kafka集群中的主题读取数据流。 在javadocs中给出了显示如何使用使用者的示例 。 要使用使用者，可以使用以下Maven依赖项： -->
+		<dependency>
+			<groupId>org.apache.kafka</groupId>
+			<artifactId>kafka-clients</artifactId>
+			<version>${kafka.version}</version>
+		</dependency>
+		<!-- 该流API允许将来自输入主题数据流输出的主题。 javadocs 中给出了显示如何使用此库的示例 有关使用Streams API的其他文档，请参见此处。 
+			要使用Kafka Streams，可以使用以下Maven依赖项： -->
+		<dependency>
+			<groupId>org.apache.kafka</groupId>
+			<artifactId>kafka-streams</artifactId>
+			<version>${kafka.version}</version>
+		</dependency>
+		<!-- 全部依赖 -->
 		<dependency>
 			<groupId>org.apache.kafka</groupId>
 			<artifactId>kafka_2.13</artifactId>
