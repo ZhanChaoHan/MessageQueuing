@@ -12,6 +12,8 @@ import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 
+import com.jachs.kafka.Console;
+
 /***
  * 
  * @author zhanchaohan
@@ -22,7 +24,7 @@ public class ConsumerDemo {
 	
 	public static void main(String[] args) throws Exception {
 		Properties properties = new Properties();
-		properties.put("bootstrap.servers", "192.168.1.6:9092");
+		properties.put("bootstrap.servers", Console.BOOTSTRAP_SERVERS_CONFIG);
 		properties.put("group.id", "group-1");
 		properties.put("enable.auto.commit", "true");
 		properties.put("auto.commit.interval.ms", "1000");

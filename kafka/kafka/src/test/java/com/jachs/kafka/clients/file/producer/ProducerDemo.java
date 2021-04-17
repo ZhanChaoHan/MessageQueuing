@@ -11,6 +11,8 @@ import org.apache.kafka.clients.producer.Producer;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.ProducerRecord;
 
+import com.jachs.kafka.Console;
+
 /***
  * 
  * @author zhanchaohan
@@ -28,7 +30,7 @@ public class ProducerDemo {
 		}
 
 		Properties properties = new Properties();
-		properties.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "192.168.1.6:9092");
+		properties.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, Console.BOOTSTRAP_SERVERS_CONFIG);
 		properties.put(ProducerConfig.ACKS_CONFIG, "all");
 		properties.put("retries", 0);
 		properties.put(ProducerConfig.BATCH_SIZE_CONFIG, 16384);

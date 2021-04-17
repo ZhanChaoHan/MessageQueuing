@@ -1,17 +1,21 @@
-package com.jachs.kafka.admin;
+package com.jachs.kafka.clients.admin;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
 import org.apache.kafka.clients.admin.AdminClient;
+import org.apache.kafka.clients.admin.AdminClientConfig;
 import org.junit.Before;
 import org.junit.Test;
+
+import com.jachs.kafka.Console;
 
 /***
  * 
  * @author zhanchaohan
  * @see org.apache.kafka.clients.admin.AdminClient
+ * @see org.apache.kafka.clients.AdminClientConfig
  */
 public class AdminClientTest {
 	AdminClient ac;
@@ -25,7 +29,9 @@ public class AdminClientTest {
 //		ac=AdminClient.create(properties);
 		
 		Map<String, Object> conf=new HashMap<String, Object>();
-				
+		conf.put(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG, Console.BOOTSTRAP_SERVERS_CONFIG);//服务地址
+		
+		
 		ac=AdminClient.create(conf);
 	}
 	@Test

@@ -12,13 +12,15 @@ import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.common.PartitionInfo;
 
+import com.jachs.kafka.Console;
+
 /***
  * @author zhanchaohan
  */
 public class ConsumerDemo {
 	public static void main(String[] args) throws InterruptedException {
 		Properties properties = new Properties();
-		properties.put("bootstrap.servers", "192.168.1.6:9092");
+		properties.put("bootstrap.servers", Console.BOOTSTRAP_SERVERS_CONFIG);
 		properties.put("group.id", "group-1");
 		properties.put("enable.auto.commit", "true");
 		properties.put("auto.commit.interval.ms", "1000");
@@ -48,7 +50,7 @@ public class ConsumerDemo {
 					System.out.println("=====================>");
 				}
 				long endTime = System.currentTimeMillis();
-				if (endTime - startTime > 30000) {
+				if (endTime - startTime > 5000) {
 					System.out.println("------------------------------------------------------------------");
 					break;
 				}
