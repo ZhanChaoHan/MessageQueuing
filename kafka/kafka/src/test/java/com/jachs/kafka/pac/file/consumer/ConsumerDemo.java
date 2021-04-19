@@ -1,4 +1,4 @@
-package com.jachs.kafka.clients.file.consumer;
+package com.jachs.kafka.pac.file.consumer;
 
 import java.io.File;
 import java.io.FileOutputStream;

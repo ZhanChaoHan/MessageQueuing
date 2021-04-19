@@ -1,4 +1,4 @@
-package com.jachs.kafka.clients.file.producer;
+package com.jachs.kafka.pac.file.producer;
 
 
 import java.io.FileInputStream;

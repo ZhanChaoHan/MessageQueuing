@@ -14,9 +14,10 @@ import com.jachs.kafka.Console;
 /***
  * 
  * @author zhanchaohan
- *
+ *打印全部消费者topic
  */
 public class Consumer {
+	
 	public static void main(String[] args) {
 		Properties properties = new Properties();
 		properties.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, Console.BOOTSTRAP_SERVERS_CONFIG);

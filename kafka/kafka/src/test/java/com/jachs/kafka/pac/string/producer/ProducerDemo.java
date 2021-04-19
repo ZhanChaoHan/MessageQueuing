@@ -1,4 +1,4 @@
-package com.jachs.kafka.clients.string.producer;
+package com.jachs.kafka.pac.string.producer;
 
 
 import java.util.Properties;

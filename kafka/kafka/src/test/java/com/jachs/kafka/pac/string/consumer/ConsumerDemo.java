@@ -1,4 +1,4 @@
-package com.jachs.kafka.clients.string.consumer;
+package com.jachs.kafka.pac.string.consumer;
 
 
 import java.util.HashSet;
