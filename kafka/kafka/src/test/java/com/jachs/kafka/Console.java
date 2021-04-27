@@ -7,5 +7,5 @@ package com.jachs.kafka;
  */
 public class Console {
 	//kafka服務器地址
-	public static final String BOOTSTRAP_SERVERS_CONFIG="192.168.43.134:9092";
+	public static final String BOOTSTRAP_SERVERS_CONFIG="127.0.0.1:9092";
 }

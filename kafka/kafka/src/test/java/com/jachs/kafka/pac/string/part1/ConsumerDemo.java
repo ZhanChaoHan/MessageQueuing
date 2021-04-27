@@ -1,5 +1,4 @@
-package com.jachs.kafka.pac.string.consumer;
-
+package com.jachs.kafka.pac.string.part1;
 
 import java.util.HashSet;
 import java.util.List;
@@ -18,6 +17,7 @@ import com.jachs.kafka.Console;
  * @author zhanchaohan
  */
 public class ConsumerDemo {
+	
 	public static void main(String[] args) throws InterruptedException {
 		Properties properties = new Properties();
 		properties.put("bootstrap.servers", Console.BOOTSTRAP_SERVERS_CONFIG);
@@ -43,14 +43,14 @@ public class ConsumerDemo {
 			kafkaConsumer.subscribe(sets);
 			long startTime = System.currentTimeMillis();
 			while (true) {
-				ConsumerRecords<String, String> records = kafkaConsumer.poll(100);
+				ConsumerRecords<String, String> records = kafkaConsumer.poll(10);
 				for (ConsumerRecord<String, String> record : records) {
 					System.out.printf("offset = %d, value = %s, topic = %s", record.offset(), record.value(),
 							record.topic());
 					System.out.println("=====================>");
 				}
 				long endTime = System.currentTimeMillis();
-				if (endTime - startTime > 5000) {
+				if (endTime - startTime > 2000) {
 					System.out.println("------------------------------------------------------------------");
 					break;
 				}
