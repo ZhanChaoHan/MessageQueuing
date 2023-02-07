@@ -3,7 +3,11 @@ package com.jachs.kafka;
 import java.util.Collections;
 import java.util.Properties;
 import java.util.Random;
+import java.util.Set;
+import java.util.concurrent.ExecutionException;
 
+import org.apache.kafka.clients.admin.KafkaAdminClient;
+import org.apache.kafka.clients.admin.ListTopicsResult;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
@@ -11,14 +15,15 @@ import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.ProducerRecord;
+import org.apache.kafka.common.KafkaFuture;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.apache.kafka.common.serialization.StringSerializer;
 import org.junit.jupiter.api.Test;
 
 public class SimpleDemo {
-	private static final String topic = "acs";
+	private static final String topic = "system-metric-double";
 	//private static final String clientIp= "127.0.0.1:9092,192.168.23.77:9092";
-	private static final String clientIp= "127.0.0.1:9092";
+	private static final String clientIp= "192.168.2.150:9092";
 	//生产者
 	@Test
 	public void Producer() throws InterruptedException {
@@ -59,4 +64,5 @@ public class SimpleDemo {
 			}
 		}
 	}
+	
 }
