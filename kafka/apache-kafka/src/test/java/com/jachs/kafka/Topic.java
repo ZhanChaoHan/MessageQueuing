@@ -1,6 +1,5 @@
 package com.jachs.kafka;
 
-import static org.assertj.core.api.Assertions.entry;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -26,7 +25,8 @@ import org.junit.jupiter.api.Test;
  */
 public class Topic {
 	private static final String clientIp= "192.168.2.150:9092";
-	String topic="aa";
+	//system-metric-data-type  system-metric-tag  system-metric-double  transcript-topic
+	String topic="system-metric-double";
 	
 	//获取全部topic
 	@Test

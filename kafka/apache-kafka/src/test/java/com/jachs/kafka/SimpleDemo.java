@@ -21,9 +21,12 @@ import org.apache.kafka.common.serialization.StringSerializer;
 import org.junit.jupiter.api.Test;
 
 public class SimpleDemo {
-	private static final String topic = "system-metric-double";
+	//system-metric-double  system-metric-tag
+	private static final String topic = "system-metric-tag";
 	//private static final String clientIp= "127.0.0.1:9092,192.168.23.77:9092";
 	private static final String clientIp= "192.168.2.150:9092";
+	
+	
 	//生产者
 	@Test
 	public void Producer() throws InterruptedException {
@@ -45,6 +48,7 @@ public class SimpleDemo {
 			kafkaProducer.close();
 		}
 	}
+	
 	//消费者
 	@Test
 	public void Consumer() {
@@ -52,7 +56,7 @@ public class SimpleDemo {
 		p.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, clientIp);
 		p.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
 		p.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
-		p.put(ConsumerConfig.GROUP_ID_CONFIG, "duanjt_test");
+		p.put(ConsumerConfig.GROUP_ID_CONFIG, "ac");
 
 		KafkaConsumer<String, String> kafkaConsumer = new KafkaConsumer<String, String>(p);
 		kafkaConsumer.subscribe(Collections.singletonList(topic));// 订阅消息
