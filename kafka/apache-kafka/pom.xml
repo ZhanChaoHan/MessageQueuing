@@ -50,7 +50,7 @@
 			<artifactId>kafka_2.13</artifactId>
 			<version>${kafka.version}</version>
 		</dependency>
-
+		
 	</dependencies>
 
 	<build>
